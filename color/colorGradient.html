@@ -5,7 +5,16 @@
     <input id="g" size="5">g</input>
     <input id="b" size="5">b</input>
     <input id="a" size="5">a</input>
-    <p id="color"></p>
+    <p id="color-0.1"></p>
+    <p id="color-0.2"></p>
+    <p id="color-0.3"></p>
+    <p id="color-0.4"></p>
+    <p id="color-0.5"></p>
+    <p id="color-0.6"></p>
+    <p id="color-0.7"></p>
+    <p id="color-0.8"></p>
+    <p id="color-0.9"></p>
+    <p id="color-1.0"></p>
     <button onclick="generateColor()">
         generate
     </button>
@@ -32,12 +41,15 @@
                 function rgbToHex(r, g, b) {
                     return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
                 }
-                document.getElementById("color").innerHTML = RGBAToHex(
-                    document.getElementById("r").value,
-                    document.getElementById("g").value,
-                    document.getElementById("b").value,
-                    document.getElementById("a").value
-                )
+                for (index = 1; index < 11; index++) {
+                    // console.log(parseFloat(index += 0.1))
+                    document.getElementById(`color-${index/10}`).innerHTML = RGBAToHex(
+                        document.getElementById("r").value,
+                        document.getElementById("g").value,
+                        document.getElementById("b").value,
+                        index / 10
+                    )
+                }
             }
         </script>
     </h1>
