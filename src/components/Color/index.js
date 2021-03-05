@@ -50,7 +50,10 @@ class Color extends React.Component {
                     {
                         [...Array(10).keys()].map((item, index) => {
                             return (
-                                <p id={`color-${item + 1}`}></p>
+                                <div>
+                                    <p id={`color-${item + 1}`}></p>
+                                    <p> a - {(item+1)/10}</p>
+                                </div>
                             )
                         }
                         )
