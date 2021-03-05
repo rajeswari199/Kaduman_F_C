@@ -46,21 +46,21 @@ class Color extends React.Component {
                 G<input name="g" id="g" size="5" /> <br />
                 B<input name="b" id="b" size="5" /> <br />
                 </div>
-                <div>
+                <button onClick={this.generateColor}>
+                    generate
+                </button>
+                <div style={{ display: 'flex', 'flex-direction': 'column' }}>
                     {
                         [...Array(10).keys()].map((item, index) => {
                             return (
-                                <div>
+                                <div style={{ display: 'flex', 'flex-direction': 'row' }}>
                                     <p id={`color-${item + 1}`}></p>
-                                    <p> a - {(item+1)/10}</p>
+                                    <p style={{'padding-left': '25px'}}> a - {(item + 1) / 10}</p>
                                 </div>
                             )
                         }
                         )
                     }
-                    <button onClick={this.generateColor}>
-                        generate
-                </button>
                 </div>
             </div>
         )
